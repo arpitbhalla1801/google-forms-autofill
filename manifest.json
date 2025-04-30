@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Google Forms Auto-Fill",
+    "version": "1.0",
+    "description": "Auto-fills all fields in a Google Form for quick previewing.",
+    "permissions": ["activeTab", "scripting"],
+    "content_scripts": [
+      {
+        "matches": ["*://docs.google.com/forms/*"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ],
+    "action": {
+      "default_title": "Auto-Fill Form"
+    },
+    "background": {
+      "service_worker": "background.js"
+    }
+}
+  
